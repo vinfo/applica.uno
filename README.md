@@ -1,4 +1,4 @@
-# Applica.uno [![bitHound Score][bithound-img]][bithound-url]
+# Applica.uno
 
 > Bolsa de empleos
 

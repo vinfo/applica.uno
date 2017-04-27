@@ -34,7 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		window.location = "https://applica.uno/aplica/movil/nueva_inicio_sesion.php";
+        super.loadUrl("https://applica.uno/aplica/movil/nueva_inicio_sesion.php");
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
