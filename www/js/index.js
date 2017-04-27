@@ -34,8 +34,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        var ref = cordova.InAppBrowser.open('https://applica.uno/aplica/movil/nueva_inicio_sesion.php', '_self', 'hidden=yes');
-        ref.show();
+        var ref = cordova.InAppBrowser.open('https://applica.uno/aplica/movil/nueva_inicio_sesion.php', '_parent', 'location=yes');
+        alert("Abierto");
+        //ref.show();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
