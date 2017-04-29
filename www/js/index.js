@@ -34,19 +34,15 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        var ref = cordova.InAppBrowser.open('https://applica.uno/aplica/movil/nueva_inicio_sesion.php', '_parent', 'location=yes');
+        alert("Iniciar");
+        var ref = cordova.InAppBrowser.open('https://applica.uno/aplica/movil/nueva_inicio_sesion.php', '_blank', 'location=yes');
+        ref.addEventListener('loadstart', function(event) { alert(event.url); });
         alert("Abierto");
-        //ref.show();
+        ref.show();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
         console.log('Received Event: ' + id);
     }
 };
