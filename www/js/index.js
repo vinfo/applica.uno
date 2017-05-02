@@ -34,7 +34,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        loadTemplate("nueva_inicio_sesion_personas");
+        $("#centralContent").load("http://applica.uno/mobil/nueva_inicio_sesion_personas.php", function () {
+            console.log("Contenido cargado exitosamente.");
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
