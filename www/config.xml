@@ -53,16 +53,7 @@
 <access origin="*"/>
 <access origin="*.pushwoosh.com" />
 
-<gap:config-file platform="android" parent="/manifest">
-  <supports-screens
-    android:xlargeScreens="true"
-    android:largeScreens="true"
-    android:smallScreens="true" />        
-    <application android:debuggable="true" android:hardwareAccelerated="true" android:theme="@android:style/Theme.NoTitleBar" >
-      <activity android:theme="@android:style/Theme.NoTitleBar" >
-      </activity>
-    </application>
-  </gap:config-file>
+
 
   <plugin name="cordova-plugin-console" version="1.0.6" />
   <plugin name="cordova-plugin-device" version="1.1.5" />
