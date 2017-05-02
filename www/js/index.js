@@ -36,6 +36,14 @@ var app = {
         app.receivedEvent('deviceready');
         getDeviceProperty();
         checkConnection();
+
+        var success = function(status) {
+            alert('Message: ' + status);
+        }
+        var error = function(status) {
+            alert('Error: ' + status);
+        }
+        window.cache.clear( success, error );        
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
