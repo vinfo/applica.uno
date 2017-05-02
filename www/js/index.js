@@ -65,17 +65,15 @@ function checkConnection() {
     states[Connection.NONE] = 'No network connection';
 
     var page = getNameURLWeb();
-    alert(page);
-    alert(states[networkState]);
+    alert(page);    
     if (states[networkState] == 'No network connection') {
         //navigator.notification.beep(1);        
         if (page != "offline.html") {
             alert('Internet es requerido!');
-            $("#centralContent").load("http://applica.uno/mobil/offline.php", function () {
+            $("#centralContent").load("offline.html", function () {
                 console.log("Internet requerido.");
             });
         }
-        //throw new Error('No Internet Connection.');  
         state = false;
     } else {
         $("#centralContent").load("http://applica.uno/mobil/nueva_inicio_sesion_personas.php", function () {
