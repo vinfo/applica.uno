@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#centralContent").load("http://vinculamos.com.co/hoja-vida.php", function () {
-        alert("Load was performed.");
+    $("#centralContent").load("http://applica.uno/mobil/nueva_inicio_sesion_personas.php", function () {
+        console.log("Contenido cargado exitosamente.");
     });
 });
