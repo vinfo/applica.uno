@@ -52,7 +52,7 @@ function getDeviceProperty() {
     console.log("Plataforma registrada " + device.platform);
 }
 function checkConnection() {
-    alert("checkConnection");
+    console.log("checkConnection");
     var state = true;
     var networkState = navigator.connection.type;
     var states = {};
@@ -66,7 +66,6 @@ function checkConnection() {
     states[Connection.NONE] = 'No network connection';
 
     var page = getNameURLWeb();
-    alert(states[networkState]);
     if (states[networkState] == 'No network connection') {
         if (page != "offline.html") {
             alert('Internet es requerido!');
