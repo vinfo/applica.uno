@@ -34,6 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
+        getDeviceProperty();
         checkConnection();
     },
     // Update DOM on a Received Event
@@ -51,7 +52,7 @@ function getDeviceProperty() {
     console.log("Plataforma registrada " + device.platform);
 }
 function checkConnection() {
-    console.log("checkConnection");
+    alert("checkConnection");
     var state = true;
     var networkState = navigator.connection.type;
     var states = {};
