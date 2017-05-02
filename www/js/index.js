@@ -66,7 +66,6 @@ function checkConnection() {
     states[Connection.NONE] = 'No network connection';
 
     var page = getNameURLWeb();
-    alert(page);    
     if (states[networkState] == 'No network connection') {
         //navigator.notification.beep(1);        
         if (page != "offline.html") {
@@ -76,8 +75,7 @@ function checkConnection() {
             });
         }
         state = false;
-    } else {
-        checkCon
+    } else {        
         $("#centralContent").load("http://applica.uno/mobil/nueva_inicio_sesion_personas.php", function () {
             console.log("Contenido cargado exitosamente.");
         });
