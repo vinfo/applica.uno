@@ -18,76 +18,74 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         app.receivedEvent('deviceready');
         checkConnection();
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
         console.log('Received Event: ' + id);
     }
 };
-function getDeviceProperty()
-{
-     console.log("getDeviceProperty");
-     var deviceOS  = device.platform  ;  //fetch the device operating system
-     var deviceOSVersion = device.version ;  //fetch the device OS version
-     var uuid=  device.uuid;
-     localStorage.setItem("OS",deviceOS);
-     localStorage.setItem("UUID",uuid);
-     console.log("Plataforma registrada "+device.platform);
+function getDeviceProperty() {
+    console.log("getDeviceProperty");
+    var deviceOS = device.platform;  //fetch the device operating system
+    var deviceOSVersion = device.version;  //fetch the device OS version
+    var uuid = device.uuid;
+    localStorage.setItem("OS", deviceOS);
+    localStorage.setItem("UUID", uuid);
+    console.log("Plataforma registrada " + device.platform);
 }
 function checkConnection() {
     console.log("checkConnection");
-    var state=true;
+    var state = true;
     var networkState = navigator.connection.type;
     var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.UNKNOWN] = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection'; 
-    
-    var page=getNameURLWeb();
+    states[Connection.WIFI] = 'WiFi connection';
+    states[Connection.CELL_2G] = 'Cell 2G connection';
+    states[Connection.CELL_3G] = 'Cell 3G connection';
+    states[Connection.CELL_4G] = 'Cell 4G connection';
+    states[Connection.CELL] = 'Cell generic connection';
+    states[Connection.NONE] = 'No network connection';
+
+    var page = getNameURLWeb();
     alert(page);
     alert(states[networkState]);
-    if(states[networkState]=='No network connection'){        
+    if (states[networkState] == 'No network connection') {
         //navigator.notification.beep(1);        
-        if(page!="offline.html"){
-            alert('Internet es requerido!');        
-            window.location.href = 'offline.html';
+        if (page != "offline.html") {
+            alert('Internet es requerido!');
+            $("#centralContent").load("http://applica.uno/mobil/offline.php", function () {
+                console.log("Internet requerido.");
+            });
         }
         //throw new Error('No Internet Connection.');  
-        state=false;                            
-    }else{
-        if(page=="offline.html"){
-            window.location.href = 'index.html';
-            $("#centralContent").load("http://applica.uno/mobil/nueva_inicio_sesion_personas.php", function () {
-                console.log("Contenido cargado exitosamente.");
-            });            
-        }
+        state = false;
+    } else {
+        $("#centralContent").load("http://applica.uno/mobil/nueva_inicio_sesion_personas.php", function () {
+            console.log("Contenido cargado exitosamente.");
+        });
     }
-    return state;    
+    return state;
 }
-function getNameURLWeb(){
- var sPath = window.location.pathname;
- var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
- return sPage;
+function getNameURLWeb() {
+    var sPath = window.location.pathname;
+    var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+    return sPage;
 }
