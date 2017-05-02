@@ -34,6 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        loadTemplate("nueva_inicio_sesion_personas");
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
