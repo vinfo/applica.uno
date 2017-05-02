@@ -35,9 +35,6 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         checkConnection();
-        $("#centralContent").load("http://applica.uno/mobil/nueva_inicio_sesion_personas.php", function () {
-            console.log("Contenido cargado exitosamente.");
-        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -78,7 +75,12 @@ function checkConnection() {
         //throw new Error('No Internet Connection.');  
         state=false;                            
     }else{
-        if(page=="offline.html")window.location.href = 'index.html';
+        if(page=="offline.html"){
+            window.location.href = 'index.html';
+            $("#centralContent").load("http://applica.uno/mobil/nueva_inicio_sesion_personas.php", function () {
+                console.log("Contenido cargado exitosamente.");
+            });            
+        }
     }
     return state;    
 }
