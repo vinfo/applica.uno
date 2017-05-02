@@ -72,12 +72,13 @@ function checkConnection() {
         if (page != "offline.html") {
             alert('Internet es requerido!');
             $("#centralContent").load("offline.html", function () {
-                console.log("Internet requerido.");
+                localStorage.setItem("offline", "true");
             });
         }
         state = false;
-    } else {
+    } else {        
         $("#centralContent").load("http://applica.uno/mobil/nueva_inicio_sesion_personas.php", function () {
+            localStorage.setItem("offline", "false");
             console.log("Contenido cargado exitosamente.");
         });
     }
