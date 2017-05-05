@@ -76,6 +76,7 @@ function checkConnection() {
         }
         state = false;
     } else {        
+        localStorage.setItem("backHistory","index");
         $("#centralContent").load("https://applica.uno/mobil/index.php", function () {
             console.log("Contenido cargado exitosamente.");
         });
