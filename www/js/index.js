@@ -75,7 +75,7 @@ function checkConnection() {
         }
         state = false;
     } else {        
-        $("#centralContent").load("http://applica.uno/mobil/index.php", function () {
+        $("#centralContent").load("https://applica.uno/mobil/index.php", function () {
             console.log("Contenido cargado exitosamente.");
         });
     }
