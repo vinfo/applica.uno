@@ -35,7 +35,8 @@ var app = {
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
         getDeviceProperty();
-        checkConnection();       
+        checkConnection();
+        document.addEventListener("backbutton", onBackKeyDown, false);     
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -85,4 +86,8 @@ function getNameURLWeb() {
     var sPath = window.location.pathname;
     var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
     return sPage;
+}
+function onBackKeyDown() {
+    alert(localStorage.backHistory);
+    backHistory(localStorage.backHistory);
 }
