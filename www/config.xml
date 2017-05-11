@@ -65,12 +65,6 @@
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
-    <plugin name="phonegap-facebook-plugin" />
-
-    <resources>
-        <string name="fb_app_id">1653438344875376</string>
-        <string name="fb_app_name">applica</string>
-    </resources>    
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
