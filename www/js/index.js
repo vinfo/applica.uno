@@ -75,8 +75,7 @@ function checkConnection() {
             });
         }
         state = false;
-    } else {        
-        localStorage.setItem("backHistory","index");
+    } else {
         $("#centralContent").load("https://applica.uno/mobil/index.php", function () {
             console.log("Contenido cargado exitosamente.");
         });
@@ -90,4 +89,12 @@ function getNameURLWeb() {
 }
 function onBackKeyDown() {
     backHistory(localStorage.backHistory);
+}
+function logout(){ 
+    localStorage.removeItem("id_user");
+    alert("Cierre local");
+    $("#centralContent").load("https://applica.uno/mobil/index.php", function () {
+        console.log("Contenido cargado exitosamente.");
+    });
+    return false;
 }
