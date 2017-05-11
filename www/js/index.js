@@ -36,7 +36,7 @@ var app = {
         app.receivedEvent('deviceready');
         getDeviceProperty();
         checkConnection();
-        document.addEventListener("backbutton", onBackKeyDown, false);     
+        //document.addEventListener("backbutton", onBackKeyDown, false);     
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -76,9 +76,7 @@ function checkConnection() {
         }
         state = false;
     } else {
-        $("#centralContent").load("https://applica.uno/mobil/index.php", function () {
-            console.log("Contenido cargado exitosamente.");
-        });
+        $("#centralContent").load("https://applica.uno/mobil/index.php");
     }
     return state;
 }
