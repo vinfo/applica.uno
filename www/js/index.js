@@ -86,5 +86,6 @@ function getNameURLWeb() {
     return sPage;
 }
 function onBackKeyDown() {
-    backHistory(localStorage.backHistory);
+    history.go(-1);
+    navigator.app.backHistory();
 }
