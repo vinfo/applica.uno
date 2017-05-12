@@ -87,18 +87,8 @@ function getNameURLWeb() {
 }
 function onBackKeyDown() {
     alert("back");
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-        alert(1);
-        history.go(-1);
-    } else if (userAgent.match(/Android/i)) {
-        alert(2);
-        alert(navigator.app.backHistory());
-        navigator.app.backHistory();
-    } else {
-        alert(3);
-        history.go(-1);
-    } 
+    history.go(-1);
+    navigator.app.backHistory();
 }
 function exit(){
    navigator.app.exitApp(); 
