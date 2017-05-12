@@ -78,7 +78,8 @@ function checkConnection() {
         }
         state = false;
     } else {
-        $("#centralContent").load("https://applica.uno/mobil/index.php");
+        var tam = historyBack.length;
+        if(tam==0)$("#centralContent").load("https://applica.uno/mobil/index.php");
     }
     return state;
 }
