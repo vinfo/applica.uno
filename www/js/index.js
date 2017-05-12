@@ -93,16 +93,10 @@ function onBackKeyDown() {
         history.go(-1);
     } else if (userAgent.match(/Android/i)) {
         alert(2);
+        alert(navigator.app.backHistory());
         navigator.app.backHistory();
     } else {
         alert(3);
         history.go(-1);
-    }
-    if (typeof (navigator.app) !== "undefined") {
-        alert(4);
-        navigator.app.backHistory();
-    } else {
-        alert(5);
-        window.history.back();
-    }    
+    } 
 }
