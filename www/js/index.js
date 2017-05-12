@@ -17,6 +17,7 @@
  * under the License.
  */
 var historyBack = [];
+var historyBackParams = [];
 var app = {
     // Application Constructor
     initialize: function () {
