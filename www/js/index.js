@@ -89,13 +89,20 @@ function onBackKeyDown() {
     alert("back");
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-        // IOS DEVICE
+        alert(1);
         history.go(-1);
     } else if (userAgent.match(/Android/i)) {
-        // ANDROID DEVICE
+        alert(2);
         navigator.app.backHistory();
     } else {
-        // EVERY OTHER DEVICE
+        alert(3);
         history.go(-1);
     }
+    if (typeof (navigator.app) !== "undefined") {
+        alert(4);
+        navigator.app.backHistory();
+    } else {
+        alert(5);
+        window.history.back();
+    }    
 }
