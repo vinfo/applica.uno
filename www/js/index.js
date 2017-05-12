@@ -100,3 +100,6 @@ function onBackKeyDown() {
         history.go(-1);
     } 
 }
+function exit(){
+   navigator.app.exitApp(); 
+}
