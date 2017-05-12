@@ -69,6 +69,7 @@ function checkConnection() {
     states[Connection.NONE] = 'No network connection';
 
     var page = getNameURLWeb();
+    var tam = historyBack.length;
     if (states[networkState] == 'No network connection') {
         if (page != "offline.html") {
             alert('Internet es requerido!');
@@ -77,9 +78,10 @@ function checkConnection() {
             });
         }
         state = false;
-    } else {
-        var tam = historyBack.length;
-        if(tam==0)$("#centralContent").load("https://applica.uno/mobil/index.php");
+    }
+    alert("Tam: "+tam);
+    if(tam==0){
+        $("#centralContent").load("https://applica.uno/mobil/index.php");
     }
     return state;
 }
