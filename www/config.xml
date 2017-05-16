@@ -97,9 +97,9 @@
     <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
 
-    <gap:config-file platform="android" parent="/manifest">
+    <gap:config-file platform="android" parent="CFBundleShortVersionString">
         <application android:debuggable="false" />
-    </gap:config-file> 
+    </gap:config-file>
 
     <access origin="*"/>
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
