@@ -81,6 +81,7 @@ function checkConnection() {
     }
     alert("History "+tam);
     if(tam==0){
+        alert("Cargar contenido");
         $("#centralContent").load("https://applica.uno/mobil/index.html");
     }
     return state;
