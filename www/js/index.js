@@ -79,6 +79,7 @@ function checkConnection() {
         }
         state = false;
     }
+    alert("History "+tam);
     if(tam==0){
         $("#centralContent").load("https://applica.uno/mobil/index.html");
     }
