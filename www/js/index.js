@@ -80,7 +80,7 @@ function checkConnection() {
         state = false;
     }
     if(tam==0){
-        $("#centralContent").load("https://applica.uno/mobil/index.php");
+        $("#centralContent").load("https://applica.uno/mobil/index.html");
     }
     return state;
 }
