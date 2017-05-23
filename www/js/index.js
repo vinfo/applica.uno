@@ -79,12 +79,8 @@ function checkConnection() {
         }
         state = false;
     }
-    alert("History "+tam);
     if(tam==0){
-        alert("Cargar contenido AJax");
-        $.getJSON('https://applica.uno/mobil/index.html&callback=?', function(data){
-            $('#centralContent').html(data.contents);
-        });
+        $("#centralContent").load("https://applica.uno/mobil/index.php");
     }
     return state;
 }
